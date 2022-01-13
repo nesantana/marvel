@@ -1,10 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App'
+import React from "react";
+import ReactDOM from "react-dom";
+import { App } from "./App";
+import { UseCharactersContextProvider } from "./Contexts/Characters.context";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <UseCharactersContextProvider>
+      <App />
+    </UseCharactersContextProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
