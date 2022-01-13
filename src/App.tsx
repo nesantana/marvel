@@ -8,6 +8,7 @@ import { Character } from "./Pages/Character";
 // Styled
 import { createGlobalStyle } from "styled-components";
 import "react-loading-skeleton/dist/skeleton.css";
+import { Comics } from "./Pages/Comics";
 
 const GlobalStyled = createGlobalStyle`
   body, html {
@@ -40,6 +41,7 @@ export const App: React.FC<any> = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/characthers" element={<Character />} />
+          <Route path="/comics" element={<Comics />} />
         </Routes>
       </>
     </Router>

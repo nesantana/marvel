@@ -1,14 +1,4 @@
-import { iSimpleReturnApi } from ".";
-
-export interface iThumbnail {
-  path: string;
-  extension: string;
-}
-
-export interface iUrl {
-  type: string;
-  url: string;
-}
+import { iSimpleReturnApi, iThumbnail, iUrl } from ".";
 
 export interface iCharacter {
   comics: iSimpleReturnApi;
