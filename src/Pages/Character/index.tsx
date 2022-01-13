@@ -26,8 +26,6 @@ export const Character: React.FC<any> = () => {
     loading: loadingCharacters,
   } = UseCharactersContext();
 
-  console.log(characters);
-
   useEffect(() => {
     if (!!characters.length === false) {
       searchCharacters();

@@ -3,13 +3,13 @@ import { characterApi } from "../Services/Character.service";
 import React, { useContext, createContext, useState } from "react";
 import { iCharacter } from "../Interfaces/iCharacter";
 
-interface iMyEconomicGroup {
+interface iCharactersContext {
   characters: iCharacter[];
   searchCharacters(): void;
   loading: boolean;
 }
 
-export const CharactersContext = createContext({} as iMyEconomicGroup);
+export const CharactersContext = createContext({} as iCharactersContext);
 
 export const UseCharactersContext: any = () => useContext(CharactersContext);
 
