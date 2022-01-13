@@ -1,5 +1,5 @@
 import axios, { AxiosStatic, AxiosInstance } from "axios";
-import { ApiResponse } from "@interfaces/";
+import { ApiResponse } from "../Interfaces/";
 import { defaultQuery } from "../Utils/defaultQuery";
 
 class CharacterApi {
@@ -7,7 +7,7 @@ class CharacterApi {
 
   constructor(protected axiosStatic: AxiosStatic = axios) {
     this.request = axiosStatic.create({
-      baseURL: process.env.REACT_APP_BASE_URL + "/characters/",
+      baseURL: process.env.REACT_APP_BASE_URL + "characters",
       headers: {
         "Content-Type": "application/json;charset=UTF-8",
       },

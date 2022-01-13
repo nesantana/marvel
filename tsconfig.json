@@ -19,13 +19,6 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "rootDir": ".",
-    "baseUrl": ".",
-    "paths": {
-      "@pages/*": ["./src/Pages/*"],
-      "@interfaces/*": ["./src/Interfaces/"],
-      "@src/*": ["./src/*"],
-    },
   },
   "include": [
     "src",
