@@ -31,6 +31,30 @@ class CharacterApi {
 
     return this.request.get<T>(id, { params });
   }
+
+  public async getEventsByCharacterId<T>(
+    id: string,
+    query?: any
+  ): Promise<ApiResponse<T>> {
+    const params = {
+      ...defaultQuery,
+      ...query,
+    };
+
+    return this.request.get<T>(id + "/events", { params });
+  }
+
+  public async getComicsByCharacterId<T>(
+    id: string,
+    query?: any
+  ): Promise<ApiResponse<T>> {
+    const params = {
+      ...defaultQuery,
+      ...query,
+    };
+
+    return this.request.get<T>(id + "/comics", { params });
+  }
 }
 
 const characterApi = new CharacterApi();

@@ -1,4 +1,4 @@
-export const formatData: (str: string) => void = (str) => {
+export const formatData: (str: string) => string = (str) => {
   if (!str) return str;
 
   const strSplited = str.split(" ")[0].split("-");
@@ -6,7 +6,7 @@ export const formatData: (str: string) => void = (str) => {
   return `${strSplited[2]}/${strSplited[1]}/${strSplited[0]}`;
 };
 
-export const formatWithoutYear: (str: string) => void = (str) => {
+export const formatWithoutYear: (str: string) => string = (str) => {
   if (!str) return str;
 
   const strSplited = str.split(" ")[0].split("-");
@@ -14,7 +14,7 @@ export const formatWithoutYear: (str: string) => void = (str) => {
   return `${strSplited[2]}/${strSplited[1]}`;
 };
 
-export const formatOnlyYear: (str: string) => void = (str) => {
+export const formatOnlyYear: (str: string) => string = (str) => {
   if (!str) return str;
 
   const strSplited = str.split(" ")[0].split("-");

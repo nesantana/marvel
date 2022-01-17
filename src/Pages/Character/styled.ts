@@ -18,6 +18,12 @@ export const BoxCharacter = styled.div`
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.25);
   width: 49%;
   flex-direction: column;
+
+  a {
+    width: 100%;
+    text-decoration: none;
+    color: #000000;
+  }
 `;
 
 export const BoxCharacterText = styled.div`

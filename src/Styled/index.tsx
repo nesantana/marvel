@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const colorPrimary = "#ec1c23";
@@ -36,6 +37,9 @@ interface iImageWithCrop {
   height?: string;
   borderRadius?: string;
   marginBottom?: string;
+  marginLeft?: string;
+  marginRight?: string;
+  marginTop?: string;
 }
 export const ImageWithCrop = styled.div<iImageWithCrop>`
   width: ${({ width = "33.3%" }) => width};
@@ -45,5 +49,81 @@ export const ImageWithCrop = styled.div<iImageWithCrop>`
   border-radius: ${({ borderRadius = "0" }) => borderRadius};
   background: url(${({ src = "" }) => src}) center center;
   margin-bottom: ${({ marginBottom = "0" }) => marginBottom};
+  margin-top: ${({ marginTop = "0" }) => marginTop};
+  margin-left: ${({ marginLeft = "0" }) => marginLeft};
+  margin-right: ${({ marginRight = "0" }) => marginRight};
   background-size: cover;
+`;
+
+type tDisplay = "flex" | "block" | "inline-block" | "inline-flex";
+type tSpaces =
+  | "flex-start"
+  | "flex-end"
+  | "space-between"
+  | "space-around"
+  | "center";
+type tDirection = "row" | "row-reverse" | "column" | "column-reverse";
+type tFlexWrap = "wrap" | "nowrap" | "wrap-reverse";
+type tTextAlign = "right" | "left" | "center";
+type tTextDecoration = "none" | "underline";
+
+interface iFlex {
+  textDecoration?: tTextDecoration;
+  display?: tDisplay;
+  justifyContent?: tSpaces;
+  alignItems?: tSpaces;
+  flexDirection?: tDirection;
+  textAlign?: tTextAlign;
+  marginTop?: string;
+  marginBottom?: string;
+  marginLeft?: string;
+  marginRight?: string;
+  width?: string;
+  minWidth?: string;
+  maxWidth?: string;
+  height?: string;
+  borderRadius?: string;
+  border?: string;
+  padding?: string;
+  flexWrap?: tFlexWrap;
+}
+
+export const Flex = styled.div<iFlex>`
+  width: ${({ width = "100%" }) => width};
+  min-width: ${({ minWidth = "auto" }) => minWidth};
+  max-width: ${({ maxWidth = "auto" }) => maxWidth};
+  height: ${({ height = "auto" }) => height};
+  border-radius: ${({ borderRadius = "0" }) => borderRadius};
+  display: ${({ display = "flex" }) => display};
+  justify-content: ${({ justifyContent = "flex-start" }) => justifyContent};
+  flex-direction: ${({ flexDirection = "row" }) => flexDirection};
+  flex-wrap: ${({ flexWrap = "nowrap" }) => flexWrap};
+  align-items: ${({ alignItems = "flex-start" }) => alignItems};
+  margin-bottom: ${({ marginBottom = "0" }) => marginBottom};
+  margin-top: ${({ marginTop = "0" }) => marginTop};
+  margin-left: ${({ marginLeft = "0" }) => marginLeft};
+  margin-right: ${({ marginRight = "0" }) => marginRight};
+  border: ${({ border = "0" }) => border};
+  padding: ${({ padding = "0" }) => padding};
+  text-align: ${({ textAlign = "" }) => textAlign};
+  text-decoration: ${({ textDecoration = "none" }) => textDecoration};
+`;
+
+export const FlexLink = styled(Link)<iFlex>`
+  width: ${({ width = "100%" }) => width};
+  min-width: ${({ minWidth = "auto" }) => minWidth};
+  max-width: ${({ maxWidth = "auto" }) => maxWidth};
+  height: ${({ height = "auto" }) => height};
+  border-radius: ${({ borderRadius = "0" }) => borderRadius};
+  display: ${({ display = "flex" }) => display};
+  justify-content: ${({ justifyContent = "flex-start" }) => justifyContent};
+  flex-direction: ${({ flexDirection = "row" }) => flexDirection};
+  flex-wrap: ${({ flexWrap = "nowrap" }) => flexWrap};
+  align-items: ${({ alignItems = "flex-start" }) => alignItems};
+  margin-bottom: ${({ marginBottom = "0" }) => marginBottom};
+  margin-top: ${({ marginTop = "0" }) => marginTop};
+  margin-left: ${({ marginLeft = "0" }) => marginLeft};
+  margin-right: ${({ marginRight = "0" }) => marginRight};
+  border: ${({ border = "0" }) => border};
+  padding: ${({ padding = "0" }) => padding};
 `;
