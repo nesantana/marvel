@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { Dashboard } from "../../Components/Dashboard";
-import { Skeleton } from "../../Components/Skeleton";
-import { UseComicsContext } from "../../Contexts/Comics.context";
-import { iComic } from "../../Interfaces/iComics";
-import { ButtonSearchMore } from "../../Styled";
-import { BoxComics, ItemBoxComics } from "./styled";
+import { Dashboard } from "@src/Components/Dashboard";
+import { Skeleton } from "@src/Components/Skeleton";
+import { UseComicsContext } from "@src/Contexts/Comics.context";
+import { iComic } from "@src/Interfaces/";
+import { ButtonSearchMore, ImageWithCrop } from "@src/Styled";
+import { BoxComics } from "./styled";
 
 export const Comics: React.FC<any> = () => {
   const { searchComics, loading: loadingComics, comics } = UseComicsContext();
@@ -19,23 +19,23 @@ export const Comics: React.FC<any> = () => {
     <Dashboard>
       <BoxComics>
         {comics.map((item: iComic) => (
-          <ItemBoxComics
+          <ImageWithCrop
             key={item.id}
             src={item.thumbnail.path + "." + item.thumbnail.extension}
-          ></ItemBoxComics>
+          ></ImageWithCrop>
         ))}
 
         {loadingComics && (
           <>
-            <ItemBoxComics src="">
+            <ImageWithCrop src="">
               <Skeleton height="500px" />
-            </ItemBoxComics>
-            <ItemBoxComics src="">
+            </ImageWithCrop>
+            <ImageWithCrop src="">
               <Skeleton height="500px" />
-            </ItemBoxComics>
-            <ItemBoxComics src="">
+            </ImageWithCrop>
+            <ImageWithCrop src="">
               <Skeleton height="500px" />
-            </ItemBoxComics>
+            </ImageWithCrop>
           </>
         )}
 

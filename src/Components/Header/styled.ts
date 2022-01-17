@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { displayAlignCenter, displayJustifyCenter } from "../../Styled";
+import { displayAlignCenter, displayJustifyCenter } from "@src/Styled";
 
 // Img
 import fundoIMG from "./fundo.jpg";

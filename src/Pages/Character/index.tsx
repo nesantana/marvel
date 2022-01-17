@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { Dashboard } from "../../Components/Dashboard";
-import { Skeleton } from "../../Components/Skeleton";
-import { UseCharactersContext } from "../../Contexts/Characters.context";
-import { iCharacter } from "../../Interfaces/iCharacter";
+import { Dashboard } from "@src/Components/Dashboard";
+import { Skeleton } from "@src/Components/Skeleton";
+import { UseCharactersContext } from "@src/Contexts/Characters.context";
+import { iCharacter } from "@src/Interfaces/";
 import {
   Box,
   BoxCharacter,
@@ -10,14 +10,13 @@ import {
   BoxCharacterText,
   CharacterDetail,
   TextCharacter,
-  Thumbnail,
   TitleCharacter,
 } from "./styled";
 import { GiSpellBook, GiBookshelf } from "react-icons/gi";
 import { BsFillCalendarEventFill } from "react-icons/bs";
 import { IoIosEasel } from "react-icons/io";
-import { Tooltip } from "../../Components/Tooltip";
-import { ButtonSearchMore } from "../../Styled";
+import { Tooltip } from "@src/Components/Tooltip";
+import { ButtonSearchMore, ImageWithCrop } from "@src/Styled";
 
 export const Character: React.FC<any> = () => {
   const {
@@ -38,7 +37,10 @@ export const Character: React.FC<any> = () => {
         <Box>
           {characters.map((item: iCharacter) => (
             <BoxCharacter key={item.id}>
-              <Thumbnail
+              <ImageWithCrop
+                marginBottom="30px"
+                width="100%"
+                height="300px"
                 src={item.thumbnail.path + "." + item.thumbnail.extension}
               />
               <BoxCharacterText>

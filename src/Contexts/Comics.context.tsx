@@ -1,7 +1,6 @@
-import { iComponentSimple } from "../Interfaces";
-import { comicsApi } from "../Services/Comics.service";
+import { comicsApi } from "@src/Services/Comics.service";
 import React, { useContext, createContext, useState } from "react";
-import { iComic } from "../Interfaces/iComics";
+import { iComic } from "@src/Interfaces/";
 
 interface iComicsContext {
   comics: iComic[];

@@ -1,6 +1,9 @@
 import { ReactNode } from "react";
 
 export * from "./iAxios";
+export * from "./iCharacter";
+export * from "./iComics";
+export * from "./iEvents";
 
 export interface iComponentSimple {
   children: ReactNode;

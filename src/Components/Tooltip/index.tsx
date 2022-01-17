@@ -1,5 +1,5 @@
 import React from "react";
-import { iComponentSimple } from "../../Interfaces";
+import { iComponentSimple } from "@src/Interfaces";
 import { ContainerTooltip, TextTooltip } from "./styled";
 import { BiCaretLeft } from "react-icons/bi";
 

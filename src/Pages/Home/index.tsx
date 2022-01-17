@@ -1,12 +1,10 @@
 import React from "react";
-import { Dashboard } from "../../Components/Dashboard";
-import { BoxEvents } from "./BoxEvents";
+import { Dashboard } from "@src/Components/Dashboard";
 
 export const Home: React.FC<any> = () => {
   return (
     <Dashboard>
-      Home
-      <BoxEvents />
+      <>Stories</>
     </Dashboard>
   );
 };

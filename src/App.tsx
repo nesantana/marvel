@@ -1,14 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-// Pages
-import { Home } from "./Pages/Home";
-import { Character } from "./Pages/Character";
-
 // Styled
 import { createGlobalStyle } from "styled-components";
 import "react-loading-skeleton/dist/skeleton.css";
-import { Comics } from "./Pages/Comics";
+
+// Pages
+import { Home } from "@src/Pages/Home";
+import { Character } from "@src/Pages/Character";
+import { Comics } from "@src/Pages/Comics";
+import { Events } from "@src/Pages/Events/indext";
 
 const GlobalStyled = createGlobalStyle`
   body, html {
@@ -42,6 +43,7 @@ export const App: React.FC<any> = () => {
           <Route path="/" element={<Home />} />
           <Route path="/characthers" element={<Character />} />
           <Route path="/comics" element={<Comics />} />
+          <Route path="/events" element={<Events />} />
         </Routes>
       </>
     </Router>

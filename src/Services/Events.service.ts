@@ -2,12 +2,12 @@ import axios, { AxiosStatic, AxiosInstance } from "axios";
 import { ApiResponse } from "@src/Interfaces/";
 import { defaultQuery } from "@src/Utils/defaultQuery";
 
-class CharacterApi {
+class EventsApi {
   public request: AxiosInstance;
 
   constructor(protected axiosStatic: AxiosStatic = axios) {
     this.request = axiosStatic.create({
-      baseURL: process.env.REACT_APP_BASE_URL + "characters",
+      baseURL: process.env.REACT_APP_BASE_URL + "events",
       headers: {
         "Content-Type": "application/json;charset=UTF-8",
       },
@@ -33,6 +33,6 @@ class CharacterApi {
   }
 }
 
-const characterApi = new CharacterApi();
+const eventsApi = new EventsApi();
 
-export { characterApi };
+export { eventsApi };
