@@ -13,6 +13,7 @@ import {
 import { formatOnlyYear, formatWithoutYear } from "@src/Utils/formatData";
 import { ButtonSearchMore, ImageWithCrop } from "@src/Styled";
 import { Skeleton } from "@src/Components/Skeleton";
+import { BoxEventsHome } from "@src/Components/ItemBoxEvents";
 
 export const Events: React.FC<any> = () => {
   const { searchEvents, events, loading: loadingEvents } = UseEventsContext();
@@ -47,21 +48,15 @@ export const Events: React.FC<any> = () => {
                   width="100%"
                   height="480px"
                   src={item.thumbnail.path + "." + item.thumbnail.extension}
-                  marginBottom="30px"
                 />
 
-                <BoxWithData>
-                  <BoxData>
-                    {formatWithoutYear(item.start)}
-                    <br />
-                    {formatOnlyYear(item.start)}
-                  </BoxData>
-                  <BoxText>
-                    {item.title}
-                    <br />
-                    {item.description}
-                  </BoxText>
-                </BoxWithData>
+                <BoxEventsHome
+                  width="100%"
+                  padding="0"
+                  start={item.start}
+                  title={item.title}
+                  description={item.description}
+                />
               </ItemBoxEvents>
             </BoxEventsItem>
           ))

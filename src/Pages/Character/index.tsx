@@ -17,6 +17,7 @@ import { BsFillCalendarEventFill } from "react-icons/bs";
 import { IoIosEasel } from "react-icons/io";
 import { Tooltip } from "@src/Components/Tooltip";
 import { ButtonSearchMore, ImageWithCrop } from "@src/Styled";
+import { Link } from "react-router-dom";
 
 export const Character: React.FC<any> = () => {
   const {
@@ -37,46 +38,48 @@ export const Character: React.FC<any> = () => {
         <Box>
           {characters.map((item: iCharacter) => (
             <BoxCharacter key={item.id}>
-              <ImageWithCrop
-                marginBottom="30px"
-                width="100%"
-                height="300px"
-                src={item.thumbnail.path + "." + item.thumbnail.extension}
-              />
-              <BoxCharacterText>
-                <TitleCharacter>{item.name}</TitleCharacter>
-                <TextCharacter>{item.description}</TextCharacter>
+              <Link to={`/characthers/${item.id}/details`}>
+                <ImageWithCrop
+                  marginBottom="30px"
+                  width="100%"
+                  height="300px"
+                  src={item.thumbnail.path + "." + item.thumbnail.extension}
+                />
+                <BoxCharacterText>
+                  <TitleCharacter>{item.name}</TitleCharacter>
+                  <TextCharacter>{item.description}</TextCharacter>
 
-                <BoxCharacterDetails>
-                  <Tooltip title="Comics">
-                    <CharacterDetail>
-                      <GiBookshelf fontSize="20px" />
-                      {item.comics.items.length}
-                    </CharacterDetail>
-                  </Tooltip>
+                  <BoxCharacterDetails>
+                    <Tooltip title="Comics">
+                      <CharacterDetail>
+                        <GiBookshelf fontSize="20px" />
+                        {item.comics.items.length}
+                      </CharacterDetail>
+                    </Tooltip>
 
-                  <Tooltip title="Events">
-                    <CharacterDetail>
-                      <BsFillCalendarEventFill fontSize="20px" />
-                      {item.events.items.length}
-                    </CharacterDetail>
-                  </Tooltip>
+                    <Tooltip title="Events">
+                      <CharacterDetail>
+                        <BsFillCalendarEventFill fontSize="20px" />
+                        {item.events.items.length}
+                      </CharacterDetail>
+                    </Tooltip>
 
-                  <Tooltip title="Series">
-                    <CharacterDetail>
-                      <IoIosEasel fontSize="20px" />
-                      {item.series.items.length}
-                    </CharacterDetail>
-                  </Tooltip>
+                    <Tooltip title="Series">
+                      <CharacterDetail>
+                        <IoIosEasel fontSize="20px" />
+                        {item.series.items.length}
+                      </CharacterDetail>
+                    </Tooltip>
 
-                  <Tooltip title="Stories">
-                    <CharacterDetail>
-                      <GiSpellBook fontSize="25px" />
-                      {item.stories.items.length}
-                    </CharacterDetail>
-                  </Tooltip>
-                </BoxCharacterDetails>
-              </BoxCharacterText>
+                    <Tooltip title="Stories">
+                      <CharacterDetail>
+                        <GiSpellBook fontSize="25px" />
+                        {item.stories.items.length}
+                      </CharacterDetail>
+                    </Tooltip>
+                  </BoxCharacterDetails>
+                </BoxCharacterText>
+              </Link>
             </BoxCharacter>
           ))}
 

@@ -10,6 +10,7 @@ import { Home } from "@src/Pages/Home";
 import { Character } from "@src/Pages/Character";
 import { Comics } from "@src/Pages/Comics";
 import { Events } from "@src/Pages/Events/indext";
+import { CharactersDetails } from "./Pages/Character/Details";
 
 const GlobalStyled = createGlobalStyle`
   body, html {
@@ -42,6 +43,10 @@ export const App: React.FC<any> = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/characthers" element={<Character />} />
+          <Route
+            path="/characthers/:id/details"
+            element={<CharactersDetails />}
+          />
           <Route path="/comics" element={<Comics />} />
           <Route path="/events" element={<Events />} />
         </Routes>
