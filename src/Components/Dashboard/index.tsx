@@ -1,8 +1,8 @@
-import { iComponentSimple } from "../../Interfaces/";
+import { iComponentSimple } from "@src/Interfaces/";
 import React from "react";
-import { Header } from "../Header";
+import { Header } from "@src/Components/Header";
 import { Container } from "./styled";
-import { Footer } from "../Footer";
+import { Footer } from "@src/Components/Footer";
 
 export const Dashboard: React.FC<any> = (props: iComponentSimple) => {
   return (

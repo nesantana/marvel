@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colorPrimary, displayAlignCenter } from "../../Styled";
+import { colorPrimary, displayAlignCenter } from "@src/Styled";
 
 export const Box = styled.div`
   display: flex;
@@ -31,20 +31,6 @@ export const TitleCharacter = styled.div`
 export const TextCharacter = styled.div`
   margin-top: 20px;
   font-size: 16px;
-`;
-
-interface iThumbnailStyled {
-  src: string;
-}
-
-export const Thumbnail = styled.div<iThumbnailStyled>`
-  height: 300px;
-  width: 100%;
-  min-width: 300px;
-  border-radius: 10px;
-  background: url(${({ src }) => src || ""}) center center;
-  background-size: cover;
-  margin-bottom: 30px;
 `;
 
 export const BoxCharacterDetails = styled.div`

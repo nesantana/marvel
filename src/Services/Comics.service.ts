@@ -1,6 +1,6 @@
 import axios, { AxiosStatic, AxiosInstance } from "axios";
-import { ApiResponse } from "../Interfaces/";
-import { defaultQuery } from "../Utils/defaultQuery";
+import { ApiResponse } from "@src/Interfaces/";
+import { defaultQuery } from "@src/Utils/defaultQuery";
 
 class ComicsApi {
   public request: AxiosInstance;

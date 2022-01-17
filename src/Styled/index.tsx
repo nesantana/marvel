@@ -25,4 +25,25 @@ export const ButtonSearchMore = styled.div`
   background: ${colorPrimary};
   color: #ffffff;
   cursor: pointer;
+  text-decoration: none;
+`;
+
+interface iImageWithCrop {
+  src?: string;
+  width?: string;
+  minWidth?: string;
+  maxWidth?: string;
+  height?: string;
+  borderRadius?: string;
+  marginBottom?: string;
+}
+export const ImageWithCrop = styled.div<iImageWithCrop>`
+  width: ${({ width = "33.3%" }) => width};
+  min-width: ${({ minWidth = "auto" }) => minWidth};
+  max-width: ${({ maxWidth = "auto" }) => maxWidth};
+  height: ${({ height = "500px" }) => height};
+  border-radius: ${({ borderRadius = "0" }) => borderRadius};
+  background: url(${({ src = "" }) => src}) center center;
+  margin-bottom: ${({ marginBottom = "0" }) => marginBottom};
+  background-size: cover;
 `;

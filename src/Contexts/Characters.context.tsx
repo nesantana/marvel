@@ -1,7 +1,6 @@
-import { iComponentSimple } from "../Interfaces";
-import { characterApi } from "../Services/Character.service";
+import { characterApi } from "@src/Services/Character.service";
 import React, { useContext, createContext, useState } from "react";
-import { iCharacter } from "../Interfaces/iCharacter";
+import { iCharacter } from "@src/Interfaces/";
 
 interface iCharactersContext {
   characters: iCharacter[];

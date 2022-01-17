@@ -33,16 +33,6 @@ export const Header: React.FC<any> = () => {
       title: "EVENTS",
       to: "/events",
     },
-    {
-      id: 4,
-      title: "SERIES",
-      to: "/series",
-    },
-    {
-      id: 5,
-      title: "STORIES",
-      to: "/stories",
-    },
   ];
 
   const { pathname } = useLocation();
