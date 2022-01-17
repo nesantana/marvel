@@ -19,6 +19,10 @@ export const BoxCharacter = styled.div`
   width: 49%;
   flex-direction: column;
 
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+
   a {
     width: 100%;
     text-decoration: none;

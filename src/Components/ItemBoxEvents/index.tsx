@@ -1,3 +1,4 @@
+import { UseMobileContext } from "@src/Contexts/Mobile.context";
 import {
   BoxData,
   BoxEventsItem,
@@ -25,8 +26,14 @@ export const BoxEventsHome: React.FC<iBoxEventsHome> = ({
   description = "",
   ...props
 }) => {
+  const { isMobile } = UseMobileContext();
+
   return (
-    <BoxEventsItem data-testid="content" {...props}>
+    <BoxEventsItem
+      width={isMobile ? "100%" : "50%"}
+      data-testid="content"
+      {...props}
+    >
       <Flex border="1px solid #999999" padding="20px">
         <ItemBoxEvents>
           <BoxWithData>
