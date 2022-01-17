@@ -2,18 +2,11 @@ import React, { useEffect } from "react";
 import { Dashboard } from "@src/Components/Dashboard";
 import { UseEventsContext } from "@src/Contexts/Events.context";
 import { iEvent } from "@src/Interfaces/";
-import {
-  BoxData,
-  BoxContent,
-  BoxEventsItem,
-  BoxText,
-  BoxWithData,
-  ItemBoxEvents,
-} from "./styled";
-import { formatOnlyYear, formatWithoutYear } from "@src/Utils/formatData";
+import { BoxContent, BoxEventsItem, ItemBoxEvents } from "./styled";
 import { ButtonSearchMore, ImageWithCrop } from "@src/Styled";
 import { Skeleton } from "@src/Components/Skeleton";
 import { BoxEventsHome } from "@src/Components/ItemBoxEvents";
+import { UseMobileContext } from "@src/Contexts/Mobile.context";
 
 export const Events: React.FC<any> = () => {
   const { searchEvents, events, loading: loadingEvents } = UseEventsContext();
@@ -24,17 +17,19 @@ export const Events: React.FC<any> = () => {
     }
   }, []);
 
+  const { isMobile } = UseMobileContext();
+
   return (
     <Dashboard>
       <BoxContent>
         {loadingEvents ? (
           <>
-            <BoxEventsItem>
+            <BoxEventsItem width={isMobile ? "100%" : "50%"}>
               <ItemBoxEvents>
                 <Skeleton height="500px" />
               </ItemBoxEvents>
             </BoxEventsItem>
-            <BoxEventsItem>
+            <BoxEventsItem width={isMobile ? "100%" : "50%"}>
               <ItemBoxEvents>
                 <Skeleton height="500px" />
               </ItemBoxEvents>
@@ -42,7 +37,7 @@ export const Events: React.FC<any> = () => {
           </>
         ) : (
           events.map((item: iEvent) => (
-            <BoxEventsItem key={item.id}>
+            <BoxEventsItem key={item.id} width={isMobile ? "100%" : "50%"}>
               <ItemBoxEvents>
                 <ImageWithCrop
                   width="100%"

@@ -49,3 +49,36 @@ export const ItemListMenu = styled.li`
     color: #000000;
   }
 `;
+
+export const MenuResponsivo = styled.div`
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 120px 30px 30px 30px;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  pointer-events: none;
+
+  &.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style: none;
+      margin-bottom: 10px;
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+    }
+  }
+`;

@@ -57,7 +57,6 @@ export const UseCharactersContextProvider: React.FC<any> = ({ children }) => {
     try {
       const { data }: { data: any } = await characterApi.getId(id);
 
-      console.log(data.data.results[0]);
       setCharacterById(data.data.results[0]);
       searchEventsByCharacterId(id);
     } catch (e) {
@@ -73,7 +72,6 @@ export const UseCharactersContextProvider: React.FC<any> = ({ children }) => {
         id
       );
 
-      console.log(data.data.results[0]);
       setEventsByCharacterId(data.data.results);
       searchComicsByCharacterId(id);
     } catch (e) {
@@ -89,7 +87,6 @@ export const UseCharactersContextProvider: React.FC<any> = ({ children }) => {
         id
       );
 
-      console.log(data.data.results[0]);
       setComicsByCharacterId(data.data.results);
     } catch (e) {
       console.error(e);

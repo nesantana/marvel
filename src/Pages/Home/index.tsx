@@ -8,16 +8,12 @@ import { Link } from "react-router-dom";
 import { UseEventsContext } from "@src/Contexts/Events.context";
 import { BoxContent, BoxEventsItem, ItemBoxEvents } from "../Events/styled";
 import { Skeleton } from "@src/Components/Skeleton";
-import { formatOnlyYear, formatWithoutYear } from "@src/Utils/formatData";
 import { BoxEventsHome } from "@src/Components/ItemBoxEvents";
 import { BoxCharactersHome } from "@src/Components/ItemBoxCharacters";
+import { UseMobileContext } from "@src/Contexts/Mobile.context";
 
 export const Home: React.FC<any> = () => {
-  const {
-    searchCharacters,
-    characters,
-    loading: loadingCharacters,
-  } = UseCharactersContext();
+  const { searchCharacters, characters } = UseCharactersContext();
   const { searchEvents, events, loading: loadingEvents } = UseEventsContext();
 
   useEffect(() => {
@@ -30,6 +26,8 @@ export const Home: React.FC<any> = () => {
     }
   }, []);
 
+  const { isMobile } = UseMobileContext();
+
   return (
     <Dashboard>
       <Title>SEE SOME CHARATCHERS</Title>
@@ -37,9 +35,9 @@ export const Home: React.FC<any> = () => {
       <BoxSomeCharacters>
         {characters.map((item: iCharacter) => (
           <FlexLink
-            width="30"
+            width={isMobile ? "50%" : "30%"}
             textDecoration="none"
-            minWidth="30%"
+            minWidth={isMobile ? "50%" : "30%"}
             marginRight="30px"
             justifyContent="flex-start"
             textAlign="left"

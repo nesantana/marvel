@@ -1,3 +1,4 @@
+import { type } from "@testing-library/user-event/dist/type";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -66,6 +67,7 @@ type tDirection = "row" | "row-reverse" | "column" | "column-reverse";
 type tFlexWrap = "wrap" | "nowrap" | "wrap-reverse";
 type tTextAlign = "right" | "left" | "center";
 type tTextDecoration = "none" | "underline";
+type tPosition = "initial" | "relative" | "absolute" | "fixed";
 
 interface iFlex {
   textDecoration?: tTextDecoration;
@@ -86,6 +88,13 @@ interface iFlex {
   border?: string;
   padding?: string;
   flexWrap?: tFlexWrap;
+  position?: tPosition;
+  left?: string;
+  bottom?: string;
+  right?: string;
+  top?: string;
+  background?: string;
+  zIndex?: string;
 }
 
 export const Flex = styled.div<iFlex>`
@@ -107,6 +116,13 @@ export const Flex = styled.div<iFlex>`
   padding: ${({ padding = "0" }) => padding};
   text-align: ${({ textAlign = "" }) => textAlign};
   text-decoration: ${({ textDecoration = "none" }) => textDecoration};
+  position: ${({ position = "initial" }) => position};
+  top: ${({ top = "initial" }) => top};
+  right: ${({ right = "initial" }) => right};
+  bottom: ${({ bottom = "initial" }) => bottom};
+  left: ${({ left = "initial" }) => left};
+  background: ${({ background = "transparent" }) => background};
+  z-index: ${({ zIndex = "initial" }) => zIndex};
 `;
 
 export const FlexLink = styled(Link)<iFlex>`
@@ -126,4 +142,9 @@ export const FlexLink = styled(Link)<iFlex>`
   margin-right: ${({ marginRight = "0" }) => marginRight};
   border: ${({ border = "0" }) => border};
   padding: ${({ padding = "0" }) => padding};
+  position: ${({ position = "initial" }) => position};
+  top: ${({ top = "initial" }) => top};
+  right: ${({ right = "initial" }) => right};
+  bottom: ${({ bottom = "initial" }) => bottom};
+  left: ${({ left = "initial" }) => left};
 `;

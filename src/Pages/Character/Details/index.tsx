@@ -7,19 +7,10 @@ import { useParams } from "react-router-dom";
 import { UseCharactersContext } from "@src/Contexts/Characters.context";
 import { Flex, ImageWithCrop } from "@src/Styled";
 import { Skeleton } from "@src/Components/Skeleton";
-import {
-  BoxData,
-  BoxEventsItem,
-  BoxText,
-  BoxWithData,
-  ItemBoxEvents,
-} from "@src/Pages/Events/styled";
-import {
-  formatData,
-  formatOnlyYear,
-  formatWithoutYear,
-} from "@src/Utils/formatData";
+import { BoxEventsItem } from "@src/Pages/Events/styled";
+import { formatData } from "@src/Utils/formatData";
 import { iComic, iEvent } from "@src/Interfaces";
+import { UseMobileContext } from "@src/Contexts/Mobile.context";
 
 export const CharactersDetails: React.FC<any> = () => {
   const { id } = useParams();
@@ -45,13 +36,16 @@ export const CharactersDetails: React.FC<any> = () => {
     );
   }
 
+  const { isMobile } = UseMobileContext();
+
   return (
     <Dashboard>
-      <Flex>
+      <Flex flexDirection={isMobile ? "column" : "row"}>
         <ImageWithCrop
-          minWidth="300px"
-          width="300px"
+          minWidth={isMobile ? "100%" : "300px"}
+          width={isMobile ? "100%" : "300px"}
           height="300px"
+          marginBottom={isMobile ? "30px" : "0"}
           src={
             characterById.thumbnail.path +
             "." +
@@ -77,7 +71,7 @@ export const CharactersDetails: React.FC<any> = () => {
             <>No related events</>
           ) : (
             eventsByCharacterId.map((item: iEvent) => (
-              <BoxEventsItem key={item.id}>
+              <BoxEventsItem key={item.id} width={isMobile ? "100%" : "50%"}>
                 <Flex>
                   <ImageWithCrop
                     width="100%"
@@ -112,7 +106,11 @@ export const CharactersDetails: React.FC<any> = () => {
             <>No related comics</>
           ) : (
             comicsByCharacterId.map((item: iComic) => (
-              <Flex key={item.id} width="25%" marginBottom="30px">
+              <Flex
+                key={item.id}
+                width={isMobile ? "100%" : "25%"}
+                marginBottom="30px"
+              >
                 <Flex padding="0 10px" flexDirection="column">
                   <ImageWithCrop
                     width="100%"
