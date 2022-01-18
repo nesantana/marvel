@@ -2,6 +2,7 @@
   "name": "marvel",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nesantana.github.io/marvel",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
@@ -16,6 +17,7 @@
     "craco-alias": "^3.0.1",
     "crypto-js": "^4.1.1",
     "eslint-import-resolver-typescript": "^2.5.0",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
@@ -28,6 +30,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
